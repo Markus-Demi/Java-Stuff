@@ -1,25 +1,27 @@
 package Task2;
 
+import java.util.Random;
+
 public class TaskSecond {
     public static void main(String[] args) {
-        /*
+        Random rnd = new Random();
+        int news = rnd.nextInt() % 100;
 
-2. Представьте, что вам необходимо написать метод, определяющий количество страниц для вывода N новостей с учетом того,
-что на одной странице помещается 10 записей. В итоге у вас будет метод, который возвращает количество страниц,
-а на вход принимает количество новостей. Помните, что тут округлять нужно всегда к большему.
+        System.out.println("Number of news: " + news);
 
-         */
+        System.out.println("Number of pages: " + paperCounter(news));
     }
 
-    private static int paperCounter(int[] array) {
-        /*
-        int pCounter;
+    private static int paperCounter(int newsOnPage) {
+        int pCounter = 0;
 
-        for(int i = 0; i < array.length; i++) {
-            // some code to count news
+        if(newsOnPage > 0) {
+            pCounter = (newsOnPage / 10);
+            if(((newsOnPage / 10) % 10) > 0 && ((newsOnPage / 10) % 10) < 10 || (newsOnPage / 10 % 10) < 10) {
+                pCounter += 1;
+            }
         }
 
         return pCounter;
-        */
     }
 }
